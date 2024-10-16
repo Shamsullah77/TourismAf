@@ -107,7 +107,7 @@ useEffect(()=>{
             "Dear countrymen! The leadership of the Ministry of Information and Culture is committed to cultural development, quality publications, the development and progress of the tourism industry, and the balanced promotion of youth. The recent reforms in this ministry show our strong will to achieve these goals."
           </Typography>
           <Typography variant="body1" sx={{ pt: "2rem", fontWeight: 'bold' }}>
-            Mullah Khairullah Khairkhwa <br />
+            Mullah Qudratullah Jamal <br />
             Acting Corporation of Culture & Information <br />
             September 9, 2021 - During His Introduction Ceremony
           </Typography>
