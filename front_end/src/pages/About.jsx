@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Typography, Box, Container, Grid } from "@mui/material";
 import backgroundImage from '../asset/img/About.jpg';
 import profileImage from '../asset/img/Khairkhah.webp'; // Assuming the image you uploaded is saved in this path.
@@ -8,7 +9,6 @@ import { useTheme } from "@emotion/react";
 // Full-screen HeroSection Component with advanced background styling
 const HeroSection = () => {
   const theme = useTheme();
-
   return (
     <Box
       sx={{
@@ -62,32 +62,17 @@ const HeroSection = () => {
           }}
         >
   We value communication and transparency.        </Typography>
-        {/* <Button
-          variant="contained"
-          sx={{
-            marginTop: "2rem",
-            backgroundColor: "#4caf50",
-            color: "#fff",
-            fontWeight: "bold",
-            padding: "12px 30px",
-            fontSize: "1rem",
-            borderRadius: "8px",
-            "&:hover": {
-              backgroundColor: "#388e3c",
-            },
-          }}
-        >
-          Book Now
-        </Button> */}
+      
       </Container>
-
-
-      
-      
     </Box>
   );
 };
 const About = () => {
+
+useEffect(()=>{
+  window.scrollTo(0,0)
+},[])
+  
   return (
     <>
 

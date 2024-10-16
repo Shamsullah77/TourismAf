@@ -10,19 +10,69 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-
-// Styled Components
-// const HeaderImage = styled(Box)(({ theme }) => ({
-//   width: "100%",
-//   height: "40vh",
-//   backgroundImage: `url(${contactImage})`,
-//   backgroundSize: "cover",
-//   backgroundPosition: "center",
-//   display: "flex",
-//   justifyContent: "flex-start",
-//   alignItems: "center",
-//   color: theme.palette.common.white,
-// }));
+import { useTheme } from "@emotion/react";
+/// Full-screen HeroSection Component with advanced background styling
+const HeroSection = () => {
+  const theme = useTheme();
+  return (
+    <Box
+      sx={{
+        backgroundImage: `url(${backgroundImage})`,
+        // backgroundImage:'url(/images/Accomodation.jpg)',
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100%", // Full screen width
+        height: "50vh", // Full screen height
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        color: "white",
+        position: "relative",
+        backgroundAttachment: "fixed",
+        [theme.breakpoints.down("md")]: {
+          height: "70vh", // Reduced height for smaller screens
+        },
+      }}
+    >
+      <Container
+        // maxWidth="lg"
+        sx={{
+          textAlign: "left",
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
+          padding: "40px",
+          borderRadius: "6px",
+        }}
+      >
+        <Typography
+          variant="h1"
+          sx={{
+            fontWeight: "bold",
+            letterSpacing: "0.05em",
+            fontSize: "3rem",
+            [theme.breakpoints.down("md")]: {
+              fontSize: "2.5rem",
+            },
+          }}
+        >
+            Contact Us
+        </Typography>
+        <Typography
+          variant="h5"
+          sx={{
+            marginTop: "1rem",
+            fontSize: "1.5rem",
+            [theme.breakpoints.down("md")]: {
+              fontSize: "1.25rem",
+            },
+          }}
+        >
+            We understand the importance of approaching each work integrally and believe in the power of simple and easy communication.
+            </Typography>
+      
+      </Container>
+    </Box>
+  );
+};
 
 const MapContainer = styled(Box)(({ theme }) => ({
   height: "550px",
@@ -176,48 +226,7 @@ const ContactPage = () => {
 
   return (
     <>
-      {/* Header Image */}
-
-      <Box
-        sx={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "right 20%",
-          backgroundRepeat: "no-repeat",
-          height: "40vh", // Full height for hero section
-          display: "flex",
-          justifyContent: "center", // Centers content horizontally
-          alignItems: "center", // Centers content vertically
-          color: "white",
-          position: "relative",
-        }}
-      >
-        {/* Align content to the left and vertically center */}
-        <Container
-          maxWidth="xl"
-          sx={{
-            width: '100%',
-            zIndex: 1,
-            textAlign: "left", // Keep text alignment to the left
-            paddingLeft: '0', // Adjust padding for left alignment
-            textTransform: 'capitalize',
-            backgroundColor: "rgba(0, 0, 0, 0.3)", // Background color full height
-            height: "100%", // Ensure background takes full height of hero section
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center', // Vertically center content inside the container
-          }}
-        >
-          <h1 style={{ fontSize: "2rem", margin: "0", textTransform: 'capitalize' }}>
-            Contact Us
-          </h1>
-          <h2 style={{ fontSize: "1rem", marginTop: "1rem", textTransform: 'capitalize' }}>
-            We understand the importance of approaching each work integrally and believe in the power of simple and easy communication.
-          </h2>
-        </Container>
-      </Box>
-
-
+      <HeroSection/>
       <Container maxWidth='xl' sx={{ paddingTop: '5rem', overflowX: 'hidden' }}>
         {/* Get in Touch Section */}
         <Box sx={{ width: "100%", backgroundColor: "#ffffff", mb: 4 }}>
