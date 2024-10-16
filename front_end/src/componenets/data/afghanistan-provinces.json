@@ -1,0 +1,381 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Badakhshan",
+          "centroid": [71.041, 36.734]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[71.041, 36.734], [71.212, 36.859], [71.379, 36.703], [71.041, 36.734]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Badghis",
+          "centroid": [63.806, 35.167]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[63.586, 35.293], [63.806, 35.167], [63.936, 35.093], [63.586, 35.293]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Baghlan",
+          "centroid": [69.133, 35.607]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.133, 35.607], [69.230, 35.700], [69.070, 35.520], [69.133, 35.607]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Balkh",
+          "centroid": [66.897, 36.756]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[66.797, 36.656], [66.997, 36.856], [66.897, 36.756]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Bamyan",
+          "centroid": [67.837, 34.830]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[67.737, 34.730], [67.937, 34.930], [67.837, 34.830]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Daykundi",
+          "centroid": [66.470, 33.738]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[66.370, 33.638], [66.570, 33.838], [66.470, 33.738]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Farah",
+          "centroid": [62.232, 32.374]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[62.132, 32.274], [62.332, 32.474], [62.232, 32.374]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Faryab",
+          "centroid": [64.535, 36.043]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[64.435, 35.943], [64.635, 36.143], [64.535, 36.043]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Ghazni",
+          "centroid": [68.418, 33.563]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[68.318, 33.463], [68.518, 33.663], [68.418, 33.563]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Ghor",
+          "centroid": [64.512, 34.726]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[64.412, 34.626], [64.612, 34.826], [64.512, 34.726]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Helmand",
+          "centroid": [64.007, 31.462]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[63.907, 31.362], [64.107, 31.562], [64.007, 31.462]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Herat",
+          "centroid": [62.190, 34.352]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[61.921, 34.215], [62.071, 34.418], [62.320, 34.287], [62.190, 34.352], [61.921, 34.215]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Jowzjan",
+          "centroid": [66.044, 36.866]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[65.944, 36.766], [66.144, 36.966], [66.044, 36.866]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Kabul",
+          "centroid": [69.172, 34.528]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.041, 34.343], [69.177, 34.517], [69.254, 34.627], [69.277, 34.589], [69.041, 34.343]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Kandahar",
+          "centroid": [65.710, 31.610]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[65.554, 31.432], [65.754, 31.682], [65.825, 31.752], [65.710, 31.610], [65.554, 31.432]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Kapisa",
+          "centroid": [69.779, 35.028]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.679, 34.928], [69.879, 35.128], [69.779, 35.028]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Khost",
+          "centroid": [69.846, 33.339]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.746, 33.239], [69.946, 33.439], [69.846, 33.339]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Kunar",
+          "centroid": [71.065, 34.783]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[70.965, 34.683], [71.165, 34.883], [71.065, 34.783]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Kunduz",
+          "centroid": [68.850, 36.726]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[68.750, 36.626], [68.950, 36.826], [68.850, 36.726]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Laghman",
+          "centroid": [70.202, 34.669]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[70.102, 34.569], [70.302, 34.769], [70.202, 34.669]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Logar",
+          "centroid": [69.032, 33.963]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[68.932, 33.863], [69.132, 34.063], [69.032, 33.963]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Nangarhar",
+          "centroid": [70.451, 34.418]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[70.351, 34.318], [70.551, 34.518], [70.451, 34.418]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Nimroz",
+          "centroid": [61.002, 30.843]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[60.902, 30.743], [61.102, 30.943], [61.002, 30.843]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Nuristan",
+          "centroid": [70.898, 35.421]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[70.798, 35.321], [70.998, 35.521], [70.898, 35.421]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Paktia",
+          "centroid": [69.467, 33.588]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.367, 33.488], [69.567, 33.688], [69.467, 33.588]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Paktika",
+          "centroid": [68.413, 32.870]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[68.313, 32.770], [68.513, 32.970], [68.413, 32.870]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Panjshir",
+          "centroid": [69.968, 35.392]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.868, 35.292], [70.068, 35.492], [69.968, 35.392]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Parwan",
+          "centroid": [69.043, 35.005]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[68.943, 34.905], [69.143, 35.105], [69.043, 35.005]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Samangan",
+          "centroid": [67.394, 36.218]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[67.294, 36.118], [67.494, 36.318], [67.394, 36.218]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Sar-e Pol",
+          "centroid": [65.905, 35.700]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[65.805, 35.600], [66.005, 35.800], [65.905, 35.700]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Takhar",
+          "centroid": [69.649, 36.669]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[69.549, 36.569], [69.749, 36.769], [69.649, 36.669]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Urozgan",
+          "centroid": [65.751, 32.851]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[65.651, 32.751], [65.851, 32.951], [65.751, 32.851]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Wardak",
+          "centroid": [68.794, 34.450]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[68.694, 34.350], [68.894, 34.550], [68.794, 34.450]]]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Zabul",
+          "centroid": [66.315, 32.083]
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [[[66.215, 31.983], [66.415, 32.183], [66.315, 32.083]]]
+        }
+      }
+    ]
+  }
+  
+  

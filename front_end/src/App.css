@@ -1,0 +1,23 @@
+.Copyright{
+    width: 100%;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    text-align: center;
+    /* padding-top: 1em; */
+}
+
+.bairaqLogo{
+
+    /* style={{ width: '5em', height: '5em', color: '#005a69', display:'flex',justifyContent:'center',alignItems:'center' }} */
+    width: 4em;
+    height: 4em;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #005a69;
+}
