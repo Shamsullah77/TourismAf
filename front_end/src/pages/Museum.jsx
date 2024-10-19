@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Box, Grid, Typography, Paper, Container } from "@mui/material";
-import image1 from "../asset/img/Museum1.jpeg";
-import image2 from "../asset/img/Museum2.jpeg";
-import image3 from "../asset/img/Museum3.jpeg";
-import image4 from "../asset/img/Museum4.jpeg";
+import {
+  Box,
+  Grid,
+  Typography,
+  Paper,
+  Container,
+  Card,
+  CardMedia,
+} from "@mui/material";
+import image1 from "../asset/img/Acco1.jpg";
+import image2 from "../asset/img/Acco2.jpg";
+import image3 from "../asset/img/Acco3.jpg";
+import image4 from "../asset/img/Acco5.jpg";
+
+import image6 from "../asset/img/Acco6.jpg";
+import image7 from "../asset/img/Acco7.jpeg";
+import image8 from "../asset/img/Acco8.jpeg";
+import image9 from "../asset/img/Acco9.jpeg";
 import backgroundImage from "../asset/img/Museum.jpg";
 
 // Data for museums
@@ -11,57 +24,60 @@ const museumData = [
   {
     name: "National Museum",
     image: image1,
-    description: "A rich collection of Afghan history and culture.",
+    description:
+      "A rich collection of Afghan history and culture. Visitors can explore artifacts from ancient to modern history.",
   },
   {
     name: "Bamiyan Museum",
     image: image2,
-    description: "Home to the famous Buddhas of Bamiyan.",
+    description:
+      "Home to the famous Buddhas of Bamiyan. Experience the cultural significance and art of the region modern history.",
   },
   {
     name: "Kabul Museum",
     image: image3,
-    description: "Showcases artifacts from Afghanistan's past.",
+    description:
+      "Showcases artifacts from Afghanistan's past. An essential stop for understanding the nation's rich heritage modern history.",
   },
   {
     name: "Herat Museum",
     image: image4,
-    description: "Features a variety of historical artifacts.",
+    description:
+      "Features a variety of historical artifacts. A great place to learn about Herat's historical importance modern history.",
   },
 ];
+const SmallImageCard = ({ image, onClick }) => (
+  <Card
+    sx={{
+      maxWidth: "90%",
+      height: "auto",
+      cursor: "pointer",
+      marginBottom: "20px", // Adjust margin as needed
+      // marginRight: "10px", // Add right margin for spacing
+    }}
+    onClick={() => onClick(image.src)}
+  >
+    <CardMedia
+      component="img"
+      height="80"
+      image={image.src}
+      alt={image.alt}
+      sx={{ objectFit: "cover" }}
+    />
+  </Card>
+);
 
-const quirkyMuseums = [
-  {
-    name: "Art Kabul",
-    image: image1,
-    description: "Focuses on modern Afghan art and artists.",
-  },
-  {
-    name: "Art Gallery Kabul",
-    image: image2,
-    description: "Features a collection of Afghan art.",
-  },
-  {
-    name: "Museum of Kabul",
-    image: image3,
-    description: "Focuses on Afghanistan's natural history.",
-  },
-  {
-    name: "Museum of Archaeology",
-    image: image4,
-    description: "Primarily focuses on archaeology.",
-  },
-  {
-    name: "Silk Road Museum",
-    image: backgroundImage,
-    description: "Dedicated to the rich history of trade along the Silk.",
-  },
-  {
-    name: "Museum of Afghan",
-    image: image1,
-    description: "Focuses on the contributions and struggles.",
-  },
-];
+const LargeImageCard = ({ image }) => (
+  <Card sx={{ width: "450px", maxWidth: "600px", height: "95%" }}>
+    <CardMedia
+      component="img"
+      height="100%"
+      image={image.src}
+      alt={image.alt}
+      sx={{ objectFit: "cover" }}
+    />
+  </Card>
+);
 
 // HeroSection Component
 const HeroSection = () => (
@@ -74,34 +90,32 @@ const HeroSection = () => (
       justifyContent: "center",
       alignItems: "center",
       color: "white",
-      position: "relative",
       backgroundAttachment: "fixed",
     }}
   >
     <Container
       sx={{
-        textAlign: "left",
-        backgroundColor: "rgba(0, 0, 0, 0.2)",
-        padding: "40px",
-        borderRadius: "6px",
+        textAlign: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        padding: { xs: "20px", md: "40px" },
+        borderRadius: "12px",
       }}
     >
       <Typography
-        variant="h1"
+        variant="h2"
         sx={{
           fontWeight: "bold",
+          fontSize: { xs: "2rem", md: "3rem" },
           letterSpacing: "0.05em",
-          fontSize: { xs: "2.5rem", md: "3rem" },
         }}
       >
-        Museums in Afghanistan 
+        Discover Afghanistan's Rich Culture
       </Typography>
       <Typography
-        variant="h5"
-        sx={{ marginTop: "1rem", fontSize: { xs: "1.25rem", md: "1.5rem" } }}
+        variant="h6"
+        sx={{ marginTop: "1rem", fontSize: { xs: "1.2rem", md: "1.5rem" } }}
       >
-        Explore Afghanistan's Museums Service Providers for Convenient
-        Information
+        Explore the country's premier museums and cultural heritage.
       </Typography>
     </Container>
   </Box>
@@ -109,14 +123,20 @@ const HeroSection = () => (
 
 // MuseumCard Component
 const MuseumCard = ({ museum, index, hoveredIndex, setHoveredIndex }) => (
-  <Grid item xs={12} sm={6} md={3} key={index}>
+  <Grid item xs={12} sm={6} md={3}>
     <Paper
-      elevation={3}
+      elevation={6}
       sx={{
-        borderRadius: "8px",
+        borderRadius: "10px",
         overflow: "hidden",
-        position: "relative",
         height: "300px",
+        transition: "transform 0.3s ease, box-shadow 0.3s ease",
+        boxShadow:
+          hoveredIndex === index
+            ? "0 8px 30px rgba(0, 0, 0, 0.5)"
+            : "0 4px 15px rgba(0, 0, 0, 0.3)",
+        transform: hoveredIndex === index ? "scale(1.05)" : "scale(1)",
+        position: "relative",
       }}
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
@@ -128,36 +148,40 @@ const MuseumCard = ({ museum, index, hoveredIndex, setHoveredIndex }) => (
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          transition: "transform 0.2s ease",
+          transition: "transform 0.3s ease",
+          transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
         }}
-        className="hover-image"
       />
       <Box
         sx={{
           position: "absolute",
-          bottom: hoveredIndex === index ? "10%" : "0",
+          bottom: 0,
           left: 0,
           right: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
-          padding: "10px",
-          textAlign: "center",
+          backgroundColor:
+            hoveredIndex === index
+              ? "rgba(0, 0, 0, 0.6)"
+              : "rgba(0, 0, 0, 0.3)",
           color: "white",
-          transition: "all 0.4s ease",
-          boxShadow:'rgba(0,0,0,0.7)'
+          padding: "15px",
+          transition: "background-color 0.3s ease",
         }}
       >
-        <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+        <Typography
+          variant="h6"
+          textAlign={"center"}
+          sx={{ fontWeight: "bold" }}
+        >
           {museum.name}
         </Typography>
         <Typography
           variant="body2"
           sx={{
-            maxHeight: hoveredIndex === index ? "60px" : "0",
+            marginTop: "5px",
+            opacity: hoveredIndex === index ? 1 : 0,
+            maxHeight: hoveredIndex === index ? "100px" : "0",
+            transition: "opacity 0.3s ease, max-height 0.3s ease",
             overflow: "hidden",
-            transition: "max-height 0.4s ease",
           }}
         >
           {museum.description}
@@ -171,13 +195,17 @@ const MuseumCard = ({ museum, index, hoveredIndex, setHoveredIndex }) => (
 const TopMuseumsSection = ({ hoveredIndex, setHoveredIndex }) => (
   <Box sx={{ padding: "60px 0" }}>
     <Typography
-      variant="h5"
-      align="left"
-      sx={{ marginBottom: "20px", color: "black", fontWeight: "bold" }}
+      variant="h4"
+      sx={{
+        marginBottom: "3rem",
+        fontWeight: "bold",
+        textAlign: "center",
+        color: "#005a69",
+      }}
     >
       Top Museums of Afghanistan
     </Typography>
-    <Grid container spacing={2}>
+    <Grid container spacing={4}>
       {museumData.map((museum, index) => (
         <MuseumCard
           key={index}
@@ -191,109 +219,126 @@ const TopMuseumsSection = ({ hoveredIndex, setHoveredIndex }) => (
   </Box>
 );
 
-// InformationSection Component
-const InformationSection = () => (
-  <Box
-    sx={{
-      padding: "40px",
-      margin: "60px 0",
-      border: "2px solid red",
-      borderRadius: "60px 0 60px 0px",
-      maxWidth: "1000px",
-      backgroundColor: "white",
-      boxShadow: 2,
-    }}
-  >
-    <Typography
-      variant="body1"
-      sx={{ lineHeight: "3rem", fontSize: "1.5rem" }}
-    >
-      Be amazed by iconic artifacts, vast permanent collections, and exciting
-      exhibitions at the best museums in Afghanistan. Browse free museums such
-      as the National Museum of Afghanistan, Bamiyan Museum, and Kabul Museum,
-      or delve into the country's rich history and culture through their diverse
-      collections.
-    </Typography>
-  </Box>
-);
+// ImageCard Component
+const KabulMuseum = () => {
+  const [currentImage, setCurrentImage] = useState(image7); // Default large image
+  const smallImages = [
+    { src: image6 },
+    { src: image7 },
+    { src: image8 },
+    { src: image9 },
+  ];
 
-// QuirkyMuseumsSection Component
-const QuirkyMuseumsSection = ({ hoveredIndex, setHoveredIndex }) => (
-  <Box sx={{ padding: "20px 0" }}>
-    <Typography
-      variant="h5"
-      align="left"
-      sx={{
-        marginBottom: "20px",
-        color: "black",
-        fontWeight: "bold",
-        fontSize: "1.5rem",
-      }}
-    >
-      Quirky Museums
-    </Typography>
-    <Grid container spacing={6}>
-      {quirkyMuseums.map((museum, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={2} key={index}>
-          <Paper
-            elevation={3}
+  return (
+    <Box sx={{ padding: "0", borderRadius: "10px" }}>
+      <Grid
+        container
+        spacing={6}
+        display={"flex"}
+        justifyContent={"space-between"}
+        alignItems={"flex-start"}
+        marginBottom={4}
+      >
+        <Grid item xs={12} md={6}>
+          <Box
             sx={{
-              overflow: "hidden",
-              textAlign: "center",
-              marginBottom: "20px",
-              position: "relative",
-              height: "200px",
+              backgroundColor: "white",
+              // padding: 3,
+              borderRadius: "8px",
+              // boxShadow: 1,
             }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
           >
-            <img
-              src={museum.image}
-              alt={museum.name}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                transition: "transform 0.3s ease",
-              }}
-              className="hover-image"
-            />
             <Typography
-              variant="h6"
+              variant="h4"
               sx={{
-                position: "absolute",
-                bottom: "40px",
-                left: 0,
-                right: 0,
-                color: "white",
-                padding: "10px",
-                textAlign: "center",
                 fontWeight: "bold",
+                color: "#333",
+                fontSize: { xs: "1.5rem" },
+                mb: 2,
               }}
             >
-              {museum.name}
+              Kabul Museum
             </Typography>
             <Typography
-              variant="body2"
+              variant="body1"
+              sx={{ lineHeight: 1.6, textAlign: "justify", mb: 2 }}
+            >
+              The Kabul Museum, also known as the National Museum of
+              Afghanistan, houses a vast collection of artifacts that represent
+              the rich cultural heritage of Afghanistan. Established in the
+              1920s, it showcases items from various historical periods,
+              including the ancient Silk Road.
+            </Typography>
+            <Typography
+              variant="body1"
               sx={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                color: "white",
-                backgroundColor: "rgba(0, 0, 0, 0.7)",
-                padding: "5px",
-                textAlign: "center",
+                mb: 1,
+                lineHeight: 1.6,
+                // fontWeight: "bold",
+                textAlign: "justify",
               }}
             >
-              {museum.description}
+              <strong>Exhibits:</strong> The museum features a range of
+              exhibits, including ancient relics, Islamic art, and ethnographic
+              items that reflect the diverse cultures of Afghanistan.
             </Typography>
-          </Paper>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 1,
+                lineHeight: 1.6,
+                // fontWeight: "bold",
+                textAlign: "justify",
+              }}
+            >
+              <strong>Visiting Information:</strong> The museum is open to
+              visitors and provides guided tours to help understand the
+              significance of its collections. It is recommended to check the
+              museum's schedule for special exhibitions and events.
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                mb: 1,
+                lineHeight: 1.6,
+                // fontWeight: "bold",
+                textAlign: "justify",
+              }}
+            >
+              <strong>History:</strong> The museum has faced numerous
+              challenges, including looting during the civil war. Many artifacts
+              were lost, but efforts have been made to recover and restore the
+              collection, making it a symbol of resilience.
+            </Typography>
+          </Box>
         </Grid>
-      ))}
-    </Grid>
-  </Box>
-);
+        <Grid item xs={12} md={6}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "stretch", // Ensures both columns have equal height
+              gap: 2,
+            }}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
+              {smallImages.map((image, index) => (
+                <SmallImageCard
+                  image={image}
+                  key={index}
+                  onClick={setCurrentImage} // Pass the setter function
+                />
+              ))}
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <LargeImageCard image={{ src: currentImage }} />
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+  );
+};
 
 // Main Museum Component
 const Museum = () => {
@@ -311,12 +356,7 @@ const Museum = () => {
           hoveredIndex={hoveredIndex}
           setHoveredIndex={setHoveredIndex}
         />
-        <style>{`.hover-image:hover { transform: scale(1.1); z-index: 1; }`}</style>
-        <InformationSection />
-        <QuirkyMuseumsSection
-          hoveredIndex={hoveredIndex}
-          setHoveredIndex={setHoveredIndex}
-        />
+        <KabulMuseum />
       </Container>
     </>
   );

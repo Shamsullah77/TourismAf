@@ -718,7 +718,7 @@ const bookingOptions = [
 
 const LetsGetBookingSection = () => {
   return (
-    <Container id="LetsGetBooking" maxWidth="xl" sx={{ padding: '5rem' }}>
+    <Container id="LetsGetBooking" maxWidth="xl" sx={{ paddingTop: '5rem' }}>
       <Box textAlign={'center'} sx={{paddingBottom:'2rem'}}>
       <Typography    variant="h4"
         align="center"
@@ -804,6 +804,128 @@ const LetsGetBookingSection = () => {
           </Grid>
         </Grid>
       </Grid>
+    </Container>
+  );
+};
+
+
+
+
+
+const newsItems = [
+  {
+    id: 1,
+    title: 'Reviving the Silk Road: New Travel Routes Open',
+    description: 'Explore the newly established travel routes along the historic Silk Road, connecting travelers to Afghanistan. Travel enthusiasts from around the world can now trace the same paths as ancient traders did.',
+    imageUrl: 'images/qasim-mirzaie-zLAGZ8OjQuo-unsplash.jpg',
+    date: 'March 25, 2022',
+  },
+  {
+    id: 2,
+    title: 'Adventure Awaits: Trekking Trails in Badakhshan',
+    description: 'Discover the stunning trekking trails of Badakhshan, where adventure seekers can explore rugged mountains and pristine lakes. Join guided tours to experience the natural beauty and cultural diversity of the region.',
+    imageUrl: 'images/qasim-mirzaie-zLAGZ8OjQuo-unsplash.jpg',
+    date: 'March 25, 2022',
+  },
+  {
+    id: 3,
+    title: 'Cultural Festivals: A Celebration of Afghan Heritage',
+    description: 'Join us in celebrating Afghanistans vibrant cultural festivals! From traditional music and dance to local cuisine, immerse yourself in the rich traditions that make Afghan culture unique and inviting.',
+    imageUrl: 'images/qasim-mirzaie-zLAGZ8OjQuo-unsplash.jpg',
+    date: 'March 25, 2022',
+  },
+  {
+    id: 4,
+    title: 'Hospitality Training Programs Launch in Kabul',
+    description: 'Kabul is set to enhance its tourism experience with new hospitality training programs. These initiatives aim to equip local businesses with the skills needed to provide exceptional service to international visitors.',
+    imageUrl: 'images/qasim-mirzaie-zLAGZ8OjQuo-unsplash.jpg',
+    date: 'March 25, 2022',
+  },
+];
+
+const LatestNews = () => {
+  const [expandedId, setExpandedId] = useState(null);
+
+  const toggleExpand = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+  };
+
+  const renderDescription = (description, id) => {
+    const maxLength = 100; // Set character limit for truncating
+    if (expandedId === id || description.length <= maxLength) {
+      return description;
+    } else {
+      return `${description.substring(0, maxLength)}...`;
+    }
+  };
+
+  return (
+    <Container maxWidth="xl" sx={{ padding: '5rem 0' }}>
+      <Typography
+        variant="h4"
+        align="center"
+        gutterBottom
+        sx={{ color: '#005a99', fontWeight: 'bold', marginBottom: '3rem' }}
+      >
+        Latest News
+      </Typography>
+
+      {/* Responsive Layout */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' }, // Column on small screens, row on larger screens
+          gap: '2rem',
+          justifyContent: 'center',
+        }}
+      >
+        {newsItems.slice(0, 3).map((news, index) => (
+          <Card
+            key={news.id}
+            sx={{
+              width: {
+                xs: '100%',          // Full width on mobile
+                sm: index === 0 ? '100%' : '48%', // First card full-width on small screens, others take half
+                md: index === 0 ? '45%' : '25%', // First card 45%, others 25% on medium screens
+                lg: index === 0 ? '40%' : '28%', // Adjust width slightly for large screens
+              },
+              minWidth: '250px',      // Minimum width for cards
+              borderRadius: '10px',
+              boxShadow: 3,
+            }}
+          >
+            <CardMedia
+              component="img"
+              height="200"
+              image={news.imageUrl}
+              alt={news.title}
+            />
+            <CardContent>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+                {news.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ marginBottom: '16px' }}>
+                {renderDescription(news.description, news.id)}
+              </Typography>
+              <Button
+                size="small"
+                sx={{ color: '#ff9900', textTransform: 'none' }}
+                onClick={() => toggleExpand(news.id)}
+              >
+                {expandedId === news.id ? 'See Less' : 'See More'}
+              </Button>
+              <Typography
+                variant="caption"
+                display="block"
+                gutterBottom
+                sx={{ marginTop: '8px', color: 'gray' }}
+              >
+                {news.date}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
+      </Box>
     </Container>
   );
 };
@@ -1024,6 +1146,7 @@ const HomePage = () => {
 
       <FoodPage/>
       <LetsGetBookingSection/>
+      <LatestNews/>
       <StayWithUsSection />
     
     </>

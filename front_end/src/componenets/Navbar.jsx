@@ -505,13 +505,13 @@ function ResponsiveAppBar() {
                     component={Link}
                     to={page.link}
                     sx={{
-                      color: "#474747",
+                      color: 'primary',
                       fontWeight: 500,
                       fontSize: "1rem",
                       textTransform: "capitalize",
+                      transition:'1s ease',
                       "&:hover": {
-                        color: "#7fbf35",
-                        textDecoration: "underline",
+                        color: "primary.dark",// textDecoration: "underline",
                       },
                     }}
                   >
@@ -529,7 +529,9 @@ function ResponsiveAppBar() {
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                         zIndex: 10,
                         minWidth: "200px",
-                        padding: "10px 0",
+                        padding: "0.5rem",
+                        textTransform:'capitalize',
+                        borderRadius:'4px'
                       }}
                       onMouseEnter={() => handleMouseEnterMenu(page.name)}
                       onMouseLeave={handleMouseLeaveMenu}
@@ -554,9 +556,12 @@ function ResponsiveAppBar() {
                               color: "#474747",
                               display: "block",
                               textAlign: "left",
+                              textTransform:'capitalize',
                               width: "100%",
+                              transition:'1s ease',
                               "&:hover": {
-                                backgroundColor: "#f5f5f5",
+                                color: "primary.light",
+                                
                               },
                             }}
                           >
@@ -621,7 +626,7 @@ function ResponsiveAppBar() {
           <Box sx={{ display: { xs: "none", md: "none", lg: "flex" }, alignItems: "center" }}>
             <Button
               sx={{
-                color: "#474747",
+                color: "#primary",
                 minWidth: 0,
                 "&:hover": { color: "#7fbf35" },
               }}

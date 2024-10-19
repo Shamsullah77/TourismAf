@@ -16,11 +16,15 @@ import Contact from "./pages/Contact";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#1976d2", // Customize your primary color
+      main: "#005a69", // Customize your primary color
+      light:'#007bd3',
+      dark:'#003458',
     },
     secondary: {
-      main: "#dc004e", // Customize your secondary color
+      main: "#f58b00", // Customize your secondary color
+      light:'#f8bc24'
     },
+
   },
   typography: {
     fontFamily: "Raleway, sans-serif",

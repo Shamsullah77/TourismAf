@@ -107,66 +107,11 @@ const HeroSection = () => {
   );
 };
 
-
-
-
-
-  // HeroSection Component
-// const HeroSection = () => (
- 
-// <Box
-//   sx={{
-//     backgroundImage: `url(${backgroundImage})`,
-//     backgroundSize: "cover",
-//     backgroundPosition: "right 20%",
-//     backgroundRepeat: "no-repeat",
-//     height: "50vh", // Full height for hero section
-//     display: "flex",
-//     justifyContent: "center", // Centers content horizontally
-//     alignItems: "center", // Centers content vertically
-//     color: "white",
-//     position: "relative",
-//   }}
-// >
-//   {/* Align content to the left and vertically center */}
-//   <Container
-//     maxWidth="xl"
-//     sx={{
-//       width: '100%',
-//       zIndex: 1,
-//       textAlign: "left", // Keep text alignment to the left
-//       paddingLeft: '0', // Adjust padding for left alignment
-//       textTransform: 'capitalize',
-//       backgroundColor: "rgba(0, 0, 0, 0.3)", // Background color full height
-//       height: "100%", // Ensure background takes full height of hero section
-//       display: 'flex',
-//       flexDirection: 'column',
-//       justifyContent: 'center', // Vertically center content inside the container
-//     }}
-//   >
-//     <h1 style={{ fontSize: "2rem", margin: "0", textTransform: 'capitalize' }}>
-//       where to go
-//     </h1>
-//     <h2 style={{ fontSize: "1rem", marginTop: "1rem", textTransform: 'capitalize' }}>
-//       Afghanistan has every kind of place for every spirit and for every desire. See where your heart takes you.
-//     </h2>
-//   </Container>
-// </Box>
-
-
-// );
-
 // NavigationBar Component
 const NavigationBar = ({ selectedSection, handleTabChange }) => (
   <AppBar position="static" sx={{ backgroundColor: "white", boxShadow: "none" }}>
     <Box sx={{ textAlign: "center", padding: "10px 0" }}>
-      {/* <Typography
-        component="h3"
-        variant="h6"
-        sx={{ fontWeight: "bold", color: "gray", fontSize: "20px", mt: 2 }}
-      >
-        Where To Go
-      </Typography> */}
+    
       <Typography
         component="h6"
         variant="body1"
@@ -206,8 +151,8 @@ const NavigationBar = ({ selectedSection, handleTabChange }) => (
   return (
     <>
       <HeroSection />
-        <NavigationBar selectedSection={selectedSection} handleTabChange={handleTabChange} />
         <Weather />
+        <NavigationBar selectedSection={selectedSection} handleTabChange={handleTabChange} />
       <Container maxWidth={"xl"}>
         {selectedSection === 0 && <KabulSection />}
 

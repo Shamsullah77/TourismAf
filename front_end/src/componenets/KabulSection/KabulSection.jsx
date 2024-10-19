@@ -8,7 +8,7 @@ const KabulSection = () => {
         Kabul
       </Typography>
       <Typography variant="body1" sx={{ marginTop: "10px" }}>
-        Kabul, the capital of Afghanistan, is known for its rich history, beautiful gardens, and bustling bazaars. It's the heart of the nation with numerous historical landmarks.
+        Kabul, the capital of Afghanistan, is known for its rich history, beautiful gardens, and bustling bazaars.
       </Typography>
       {/* Add more details about Kabul here */}
     </Box>

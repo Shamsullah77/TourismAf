@@ -38,27 +38,27 @@ const Header = () => {
         >
           {/* Contact Info and Location (Visible on larger screens) */}
           <Box
-            display={{ xs: 'none', md: 'flex' }} // Hidden on mobile, visible on tablet and desktop
+            display={{ xs: 'none', md: 'flex', }} // Hidden on mobile, visible on tablet and desktop
             alignItems="center"
             sx={{ gap: 4 }}
           >
             <Box display="flex" alignItems="center">
-              <RoomIcon sx={{ color: '#474747', marginRight: '0.5rem' }} />
-              <Typography variant="body2" sx={{ fontSize: '1rem' }}>
+              <RoomIcon sx={{ color: '#474747', marginRight: '0.5rem',fontSize:'1.3rem'}} />
+              <Typography variant="body2">
                 Malik Asghar Square, KBL, AFG
               </Typography>
             </Box>
 
             <Box display="flex" alignItems="center">
-              <CallIcon sx={{ color: '#474747', marginRight: '0.5rem' }} />
-              <Typography variant="body2" sx={{ fontSize: '1rem' }}>
+              <CallIcon sx={{ color: '#474747', marginRight: '0.5rem' ,fontSize:'1.3rem'}} />
+              <Typography variant="body2" >
                 +93 (0) 777 777 777
               </Typography>
             </Box>
 
             <Box display="flex" alignItems="center">
-              <AccessTimeIcon sx={{ color: '#474747', marginRight: '0.5rem' }} />
-              <Typography variant="body2" sx={{mr:'1rem', fontSize: '1rem' }}>
+              <AccessTimeIcon sx={{ color: '#474747', marginRight: '0.5rem',fontSize:'1.3rem' }} />
+              <Typography variant="body2" sx={{mr:'1rem',}}>
                 8:00AM - 4:00PM
               </Typography>
             </Box>
@@ -71,6 +71,7 @@ const Header = () => {
                 placeholder="Search…"
                 variant="outlined"
                 size="small"
+                
                 sx={{ width: { xs: '12rem', sm: '15rem', md: '14rem' } }} // Responsive width
               />
             )}
@@ -78,12 +79,12 @@ const Header = () => {
               onClick={() => setShowSearch(!showSearch)} // Toggle search input visibility
               sx={{ color: '#474747' }}
             >
-              <SearchIcon />
+              <SearchIcon  sx={{fontSize:'1.3rem'}}/>
             </IconButton>
 
             {/* Language Switch Button */}
             <IconButton onClick={handleLanguageMenuClick} sx={{ color: '#474747' }}>
-              <LanguageIcon />
+              <LanguageIcon sx={{fontSize:'1.3rem'}}/>
             </IconButton>
             <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleLanguageMenuClose}>
               <MenuItem onClick={handleLanguageMenuClose}>English</MenuItem>

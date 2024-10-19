@@ -155,195 +155,203 @@ const Accommodation = () => {
         >
           TOP ACCOMMODATIONS!
         </h2>
-        <Grid container padding={0}>
-          {hotels.map((hotel, index) => (
-            <Grid item xs={12} md={3} key={index} sx={{ padding: "0" }}>
-              <Paper
-                elevation={3}
+        <Container maxWidth={'xl'} sx={{ display: "flex",padding: 0, gap:'3rem' }}>
+  {hotels.map((hotel, index) => (
+    <Box
+      key={index}
+      sx={{
+        width: { xs: "100%", md: "23%" }, // Adjusted for responsiveness
+        padding: "0",
+      }}
+    >
+      <Paper
+        elevation={3}
+        sx={{
+          overflow: "hidden",
+          textAlign: "center",
+          position: "relative",
+          maxWidth: "100%",
+          margin: "0 auto",
+          height: "100%", // Ensure full height for the card
+        }}
+      >
+        {/* Image and details are hidden if the map is visible */}
+        {!mapVisible[index] && (
+          <>
+            <img
+              src={hotel.image}
+              alt={hotel.name}
+              style={{
+                width: "100%",
+                height: "25vh",
+                display: "block",
+              }}
+            />
+            <Box
+              sx={{
+                position: "relative",
+                padding: "0.5rem",
+                backgroundColor: "white",
+              }}
+            >
+              <Button
+                variant="contained"
+                onClick={() => toggleMap(index)}
                 sx={{
-                  overflow: "hidden",
-                  textAlign: "center",
-                  position: "relative", // Added to handle the map overlay
-                  maxWidth: "250px",
-                  margin: "0 auto",
-                  height: "100%", // Ensure full height for the card
+                  bgcolor: "green",
+                  color: "white",
+                  borderRadius: "50%",
+                  minWidth: "30px",
+                  height: "30px",
+                  padding: "0.2rem",
+                  position: "absolute",
+                  left: "10px",
+                  bottom: "25px",
                 }}
               >
-                {/* Image and details are hidden if the map is visible */}
-                {!mapVisible[index] && (
-                  <>
-                    <img
-                      src={hotel.image}
-                      alt={hotel.name}
-                      style={{
-                        width: "100%",
-                        height: "25vh",
-                        display: "block",
-                      }}
-                    />
-                    <Box
-                      sx={{
-                        position: "relative",
-                        padding: "0.5rem",
-                        backgroundColor: "white",
-                      }}
-                    >
-                      <Button
-                        variant="contained"
-                        onClick={() => toggleMap(index)}
-                        sx={{
-                          bgcolor: "green",
-                          color: "white",
-                          borderRadius: "50%",
-                          minWidth: "30px",
-                          height: "30px",
-                          padding: "0.2rem",
-                          position: "absolute",
-                          left: "10px",
-                          bottom: "25px",
-                        }}
-                      >
-                        <LocationOnIcon sx={{ color: "white" }} />
-                      </Button>
+                <LocationOnIcon sx={{ color: "white" }} />
+              </Button>
 
-                      <Box
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-around",
-                          alignItems: "center",
-                          padding: "1px",
-                        }}
-                      >
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: "black",
-                            display: "flex",
-                            alignItems: "center",
-                            marginRight: "40px",
-                          }}
-                        >
-                          <StarIcon
-                            sx={{
-                              marginRight: "4px",
-                              fontSize: "15px",
-                              color: "lightgray",
-                            }}
-                          />
-                          {hotel.rating}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: "black",
-                            display: "flex",
-                            alignItems: "center",
-                          }}
-                        >
-                          <HotelIcon
-                            sx={{
-                              marginRight: "10px",
-                              fontSize: "15px",
-                              color: "lightgray",
-                            }}
-                          />
-                          {hotel.reviews}
-                        </Typography>
-                      </Box>
-                    </Box>
-                    <hr style={{ margin: "1px 0", borderColor: "#fafafa" }} />
-                    <Box
-                      sx={{
-                        color: "gray",
-                        padding: "0.5rem",
-                        fontSize: "12px",
-                      }}
-                    >
-                      <Typography
-                        variant="outline"
-                        sx={{
-                          backgroundColor: "#f5f5f5",
-                          padding: "0 0.4rem",
-                          borderRadius: "2px",
-                        }}
-                      >
-                        HOTEL
-                      </Typography>
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          fontWeight: "bold",
-                          color: "green",
-                          marginTop: "0.5rem",
-                          fontSize: "15px",
-                        }}
-                      >
-                        {hotel.name}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        sx={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}
-                      >
-                        {hotel.location}
-                      </Typography>
-                    </Box>
-                  </>
-                )}
-
-                {/* Map takes the full size of the card */}
-                {mapVisible[index] && (
-                  <Box
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  padding: "1px",
+                }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "black",
+                    display: "flex",
+                    alignItems: "center",
+                    marginRight: "40px",
+                  }}
+                >
+                  <StarIcon
                     sx={{
-                      position: "absolute",
-                      top: "0",
-                      left: "0",
-                      right: "0",
-                      bottom: "0",
-                      zIndex: 100,
-                      backgroundColor: "white",
+                      marginRight: "4px",
+                      fontSize: "15px",
+                      color: "lightgray",
                     }}
-                  >
-                    <MapContainer
-                      center={hotel.coordinates}
-                      zoom={13}
-                      style={{ height: "100%", width: "100%" }}
-                    >
-                      <TileLayer
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                      />
-                      <Marker position={hotel.coordinates}>
-                        <Popup>{hotel.name}</Popup>
-                      </Marker>
-                    </MapContainer>
+                  />
+                  {hotel.rating}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "black",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <HotelIcon
+                    sx={{
+                      marginRight: "10px",
+                      fontSize: "15px",
+                      color: "lightgray",
+                    }}
+                  />
+                  {hotel.reviews}
+                </Typography>
+              </Box>
+            </Box>
+            <hr style={{ margin: "1px 0", borderColor: "#fafafa" }} />
+            <Box
+              sx={{
+                color: "gray",
+                padding: "0.5rem",
+                fontSize: "12px",
+              }}
+            >
+              <Typography
+                variant="outline"
+                sx={{
+                  backgroundColor: "#f5f5f5",
+                  padding: "0 0.4rem",
+                  borderRadius: "2px",
+                }}
+              >
+                HOTEL
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: "bold",
+                  color: "green",
+                  marginTop: "0.5rem",
+                  fontSize: "15px",
+                }}
+              >
+                {hotel.name}
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{ marginTop: "0.5rem", marginBottom: "0.5rem" }}
+              >
+                {hotel.location}
+              </Typography>
+            </Box>
+          </>
+        )}
 
-                    {/* Close button */}
-                    <Button
-                      onClick={() => toggleMap(index)}
-                      sx={{
-                        position: "absolute",
-                        right: "10px",
-                        top: "10px",
-                        color: "white",
-                        backgroundColor: "red",
-                        padding: "0.5rem",
-                        borderRadius: "50%",
-                        minWidth: "30px",
-                        zIndex: 9999,
-                        border: "2px solid white",
-                        "&:hover": {
-                          backgroundColor: "darkred",
-                        },
-                      }}
-                    >
-                      <CloseIcon />
-                    </Button>
-                  </Box>
-                )}
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
+        {/* Map takes the full size of the card */}
+        {mapVisible[index] && (
+          <Box
+            sx={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              right: "0",
+              bottom: "0",
+              zIndex: 100,
+              backgroundColor: "white",
+            }}
+          >
+            <MapContainer
+              center={hotel.coordinates}
+              zoom={13}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <Marker position={hotel.coordinates}>
+                <Popup>{hotel.name}</Popup>
+              </Marker>
+            </MapContainer>
+
+            {/* Close button */}
+            <Button
+              onClick={() => toggleMap(index)}
+              sx={{
+                position: "absolute",
+                right: "10px",
+                top: "10px",
+                color: "white",
+                backgroundColor: "red",
+                padding: "0.5rem",
+                borderRadius: "50%",
+                minWidth: "30px",
+                zIndex: 9999,
+                border: "2px solid white",
+                "&:hover": {
+                  backgroundColor: "darkred",
+                },
+              }}
+            >
+              <CloseIcon />
+            </Button>
+          </Box>
+        )}
+      </Paper>
+    </Box>
+  ))}
+</Container>
+
+
         <AccomodationSecondPart />
       </Box>
     </>
