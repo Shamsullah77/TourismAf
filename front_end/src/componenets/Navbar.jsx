@@ -558,10 +558,9 @@ function ResponsiveAppBar() {
                               textAlign: "left",
                               textTransform:'capitalize',
                               width: "100%",
-                              transition:'1s ease',
                               "&:hover": {
                                 color: "primary.light",
-                                
+                               
                               },
                             }}
                           >
@@ -593,7 +592,7 @@ function ResponsiveAppBar() {
                                     textAlign: "left",
                                     width: "100%",
                                     "&:hover": {
-                                      backgroundColor: "#f5f5f5",
+                                      color: "primary.light",
                                     },
                                   }}
                                 >

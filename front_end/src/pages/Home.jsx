@@ -10,115 +10,32 @@ import {
   CardActionArea,
   Button,
   Box,
-  Avatar,
   IconButton,
-  Collapse,
   Stack,
   TextField,
   Dialog,
   DialogTitle,
   
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import afghanistanBackground from "../asset/img/navbar3.jpg";
-import hotel from "../asset/img/hotel-final.jpg";
-import bus from "../asset/img/bus-final-2.jpg";
-import plane from "../asset/img/plane-final-2.jpg";
-import train from "../asset/img/train-final.jpg";
-import txyco from "../asset/img/txyco.jpeg";
-import single from "../asset/img/single.webp";
-
 import spring from "../asset/img/spring.jpg";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import App from "../App.css";
-
 import Hero from "../componenets/Hero";
 import Map from "./Map";
-
 import { LandscapeOutlined, LocalLibraryOutlined, MuseumOutlined, PaletteOutlined } from "@mui/icons-material";
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
 import { useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
 import CloseIcon from "@mui/icons-material/Close";
-import food1 from "../asset/img/food1.jpg";
-import food2 from "../asset/img/food2.jpg";
-import food3 from "../asset/img/food3.jpg";
-import food4 from "../asset/img/food4.jpg";
-import food5 from "../asset/img/food5.jpg";
-import food6 from "../asset/img/food6.jpg";
+
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import CommentIcon from '@mui/icons-material/Comment';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
 
 
-const destinations = [
-  { img: hotel, label: "Hotels" },
-  { img: bus, label: "Buses" },
-  { img: plane, label: "Plane" },
-  { img: train, label: "Train" },
-  { img: txyco, label: "Airlines" },
-  { img: single, label: "Masks" },
-];
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme }) => ({
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-  transform: (props) => (props.expand ? "rotate(180deg)" : "rotate(0deg)"),
-}));
-
-const InfoCard = ({ img, title, description }) => {
-  const [expanded, setExpanded] = useState(false);
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  return (
-    <Card sx={{ maxWidth: 400, margin: 1 }}>
-      <img
-        src={img}
-        alt={title}
-        style={{ width: "100%", height: "35vh", objectFit: "cover" }}
-      />
-      <Avatar sx={{ bgcolor: "primary.main", margin: "1em 1em" }}>
-        {title.charAt(0)}
-      </Avatar>
-      <Typography variant="h6" padding={"0 1em"}>
-        {title}
-      </Typography>
-      <Typography variant="body2" padding={"0 1.3em"}>
-        {description}
-      </Typography>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography>More details about {title}...</Typography>
-        </CardContent>
-      </Collapse>
-    </Card>
-  );
-};
 
 // information of Afg shuar
 const AfghanistanTourismSection = () => {
@@ -128,7 +45,7 @@ const AfghanistanTourismSection = () => {
         // backgroundImage: `url(${afghanistanBackground})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        color: "#005a69",
+        color: "primary.main",
         padding: { xs: "30px 20px", md: "40px 40px" },
         textAlign: "center",
         position: "relative",
@@ -183,16 +100,16 @@ const TravelInfoCard = ({ image, title, description }) => (
     >
       <CardContent sx={{  textAlign: 'center' }}>
         <img src={image} alt={title} width="100" height="100" style={{ marginBottom: '1rem' }} />
-        <Typography variant="h6" color="#005a69" gutterBottom>
+        <Typography variant="h6" color="primary" gutterBottom>
           {title}
         </Typography>
-        <Typography variant="body2" color="#005a69">
+        <Typography variant="body2" color="primary">
           {description}
         </Typography>
       </CardContent>
       <Stack alignItems="center">
         <CardActions>
-          <Button variant="outlined" sx={{ color: '#009fbb', borderColor: '#009fbb', '&:hover': { backgroundColor: '#009fbb', color: 'white' } }}>
+          <Button variant="outlined" sx={{ color: 'primary.light', borderColor: '#009fbb', '&:hover': { backgroundColor: '#009fbb', color: 'white' } }}>
             Read More
           </Button>
         </CardActions>
@@ -217,7 +134,7 @@ const TravelInfoSection = () => {
         <Typography    variant="h4"
         align="center"
         gutterBottom
-        sx={{ pb: '4rem', fontWeight:'bold',  color: "#005a69" }}>
+        sx={{ pb: '4rem', fontWeight:'bold',  color: "primary.main" }}>
             THINGS TO KNOW BEFORE TRAVELLING
           </Typography>
           <Grid container spacing={5} justifyContent="center">
@@ -259,7 +176,6 @@ const data = {
     path: '/cultural-arts',
   },
 };
-
 const CulturalAttractions = () => {
   const [selectedCategory, setSelectedCategory] = useState('museums');
   const [orderedCategories, setOrderedCategories] = useState(['museums', 'heritageSites', 'libraries', 'culturalArts']);
@@ -284,7 +200,7 @@ const CulturalAttractions = () => {
         <Typography    variant="h4"
         align="center"
         gutterBottom
-        sx={{ pb: '4rem', fontWeight:'bold',  color: "#005a69" }}>
+        sx={{ pb: '4rem', fontWeight:'bold',  color: "primary.main" }}>
             Cultural Attractions
           </Typography>
         </Grid>
@@ -324,22 +240,22 @@ const CulturalAttractions = () => {
               {
                 category: 'museums',
                 label: 'Museums',
-                icon: <MuseumOutlined sx={{ width: '2em', height: '1.8em' }} />,
+                icon: <MuseumOutlined sx={{ width: '2em', height: '1.8em',color:'primary.main' }} />,
               },
               {
                 category: 'heritageSites',
                 label: 'Heritage Sites',
-                icon: <LandscapeOutlined sx={{ width: '2em', height: '1.8em' }} />,
+                icon: <LandscapeOutlined sx={{ width: '2em', height: '1.8em', color:'primary.main' }} />,
               },
               {
                 category: 'libraries',
                 label: 'Libraries',
-                icon: <LocalLibraryOutlined sx={{ width: '2em', height: '1.8em' }} />,
+                icon: <LocalLibraryOutlined sx={{ width: '2em', height: '1.8em' ,color:'primary.main'}} />,
               },
               {
                 category: 'culturalArts',
                 label: 'Cultural Arts',
-                icon: <PaletteOutlined sx={{ width: '2em', height: '1.8em' }} />,
+                icon: <PaletteOutlined sx={{ width: '2em', height: '1.8em', color:'primary.main'}} />,
               },
             ].map((item, index) => (
               <Box key={index} sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', marginBottom: 2 }}>
@@ -355,7 +271,7 @@ const CulturalAttractions = () => {
                   {item.icon}
                 </Box>
                 <Button onClick={() => handleMenuClick(item.category)} sx={{ textAlign: 'left', fontSize: { xs: '0.8em', md: '1em' } }}>
-                  <Typography variant="h6" sx={{ color: selectedCategory === item.category ? '#005a69' : 'black' }}>
+                  <Typography variant="h6" sx={{ color: selectedCategory === item.category ? 'primary.main' : 'black' }}>
                     {item.label}
                   </Typography>
                 </Button>
@@ -430,37 +346,37 @@ const foodItems = [
     title: "Cheken Rice",
     description:
       "A classic dish topped with rich sauce and a blend of flavors that will tantalize your taste buds. It's served with fragrant rice and garnished with fresh herbs for an authentic experience A classic dish topped with rich sauce and a blend of flavors that will tantalize your taste buds. It's served with fragrant rice and garnished with fresh herbs for an authentic experience.",
-    imageUrl: food1,
+    imageUrl: "images/food1.jpg",
   },
   {
     title: "Kabali Palou",
     description:
       "Succulent beef served with aromatic rice and spices, perfect for any occasion. This dish is a favorite in Afghan cuisine, rich in flavor and tradition, making it a must-try Succulent beef served with aromatic rice and spices, perfect for any occasion. This dish is a favorite in Afghan cuisine, rich in flavor and tradition, making it a must-try.",
-    imageUrl: food2,
+    imageUrl: 'images/food2.jpg',
   },
   {
     title: "Salad",
     description:
       "A vibrant mix of fresh greens and vegetables, ideal for a refreshing meal. Tossed with a zesty dressing, this salad complements any dish and adds a healthy touch to your dining experience Succulent beef served with aromatic rice and spices, perfect for any occasion. This dish is a favorite in Afghan cuisine, rich in flavor and tradition, making it a must-try.",
-    imageUrl: food3,
+    imageUrl: "images/food3.jpg",
   },
   {
     title: "Chaps",
     description:
       "Traditional dish with fresh ingredients and spices, bringing a taste of home. Each bite is packed with flavor, making it a comforting choice for any meal, especially with family Succulent beef served with aromatic rice and spices, perfect for any occasion. This dish is a favorite in Afghan cuisine, rich in flavor and tradition, making it a must-try.",
-    imageUrl: food4,
+    imageUrl: "images/food4.jpg",
   },
   {
     title: "Burger",
     description:
       "Juicy beef patty with fresh toppings and condiments, a classic favorite. Our burgers are grilled to perfection and served with a side of crispy fries for a satisfying meal Succulent beef served with aromatic rice and spices, perfect for any occasion. This dish is a favorite in Afghan cuisine, rich in flavor and tradition, making it a must-try.",
-    imageUrl: food5,
+    imageUrl: "images/food5.jpg",
   },
   {
     title: "Cheken",
     description:
       "Crispy chicken served with flavorful sides that everyone will love. Marinated in our special blend of spices, it's fried to a golden brown and served hot for a delightful crunch Succulent beef served with aromatic rice and spices, perfect for any occasion. This dish is a favorite in Afghan cuisine, rich in flavor and tradition, making it a must-try.",
-    imageUrl: food6,
+    imageUrl: "images/food6.jpg",
   },
 ];
 
@@ -483,7 +399,7 @@ const FoodPage = () => {
       <Typography    variant="h4"
         align="center"
         gutterBottom
-        sx={{ pb: '4rem', fontWeight:'bold',  color: "#005a69" }}>
+        sx={{ pb: '4rem', fontWeight:'bold',  color: "primary.main" }}>
               The most delicious dishes of Afghanistan
             </Typography>
       <Grid container spacing={6}>
@@ -715,7 +631,6 @@ const bookingOptions = [
   },
  
 ];
-
 const LetsGetBookingSection = () => {
   return (
     <Container id="LetsGetBooking" maxWidth="xl" sx={{ paddingTop: '5rem' }}>
@@ -723,7 +638,7 @@ const LetsGetBookingSection = () => {
       <Typography    variant="h4"
         align="center"
         gutterBottom
-        sx={{ pb: '4rem', fontWeight:'bold',  color: "#005a69" }}>
+        sx={{ pb: '4rem', fontWeight:'bold',  color: "primary.main" }}>
               Booking And Reservation
             </Typography>
       </Box>
@@ -731,7 +646,7 @@ const LetsGetBookingSection = () => {
         {/* Left side for the title */}
         <Grid item xs={12} md={3}>
           <Box textAlign="Center">
-            <Typography variant="h2" component="h2" fontWeight="bold" color="#005a69">
+            <Typography variant="h2" component="h2" fontWeight="bold" color="primary.main">
               Let's Get Booking!
             </Typography>
           </Box>
@@ -842,7 +757,6 @@ const newsItems = [
     date: 'March 25, 2022',
   },
 ];
-
 const LatestNews = () => {
   const [expandedId, setExpandedId] = useState(null);
 
@@ -865,7 +779,7 @@ const LatestNews = () => {
         variant="h4"
         align="center"
         gutterBottom
-        sx={{ color: '#005a99', fontWeight: 'bold', marginBottom: '3rem' }}
+        sx={{ color: 'primary.main', fontWeight: 'bold', marginBottom: '3rem' }}
       >
         Latest News
       </Typography>
@@ -901,15 +815,15 @@ const LatestNews = () => {
               alt={news.title}
             />
             <CardContent>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+              <Typography variant="h6" gutterBottom sx={{ color:'primary.main', fontWeight: 'bold' }}>
                 {news.title}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ marginBottom: '16px' }}>
+              <Typography variant="body2" color="primary.main" sx={{ marginBottom: '16px' }}>
                 {renderDescription(news.description, news.id)}
               </Typography>
               <Button
                 size="small"
-                sx={{ color: '#ff9900', textTransform: 'none' }}
+                sx={{ color: 'secondary.main', textTransform: 'none' }}
                 onClick={() => toggleExpand(news.id)}
               >
                 {expandedId === news.id ? 'See Less' : 'See More'}
@@ -918,7 +832,7 @@ const LatestNews = () => {
                 variant="caption"
                 display="block"
                 gutterBottom
-                sx={{ marginTop: '8px', color: 'gray' }}
+                sx={{ marginTop: '8px', color: 'primary.main' }}
               >
                 {news.date}
               </Typography>
@@ -929,6 +843,9 @@ const LatestNews = () => {
     </Container>
   );
 };
+
+
+
 
 
 
@@ -1125,22 +1042,6 @@ const HomePage = () => {
       <TravelInfoSection />
       <CulturalAttractions />
 
-      {/* <Container maxWidth={'xl'} sx={{paddingTop:'5rem'}}>
-        <Typography variant="h4" align="left" sx={{ marginBottom: 2 }}>
-          Latest News
-        </Typography>
-        <Slider {...settings} backgroundColor>
-          {destinations.map((destination, index) => (
-            <InfoCard
-              key={index}
-              img={destination.img}
-              title={destination.label}
-              description={`Explore our ${destination.label.toLowerCase()}.`}
-              backgroundColor={"black"}
-            />
-          ))}
-        </Slider>
-      </Container> */}
       <Map />
 
 
