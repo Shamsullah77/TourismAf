@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <path data-region="Kabul" d="M100,100 L200,100 L200,200 L100,200 Z" fill="#ccc" />
+  <path data-region="Herat" d="M300,100 L400,100 L400,200 L300,200 Z" fill="#ccc" />
+  <path data-region="Balkh" d="M500,100 L600,100 L600,200 L500,200 Z" fill="#ccc" />
+  <!-- More regions -->
+</svg>
