@@ -1,22 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardActions,
-  CardMedia,
-  CardActionArea,
-  Button,
-  Box,
-  IconButton,
-  Stack,
-  TextField,
-  Dialog,
-  DialogTitle,
-  
-} from "@mui/material";
+import {Container,Typography,Grid,Card,CardContent,CardActions,CardMedia,CardActionArea,Button,Box,IconButton,Stack,TextField,Dialog,DialogTitle,  } from "@mui/material";
 import afghanistanBackground from "../asset/img/navbar3.jpg";
 import spring from "../asset/img/spring.jpg";
 import "slick-carousel/slick/slick.css";
@@ -150,10 +133,6 @@ const TravelInfoSection = () => {
 
 
 
-
-
-
-
 const data = {
   museums: {
     images: ['/images/Museum.jpg'],
@@ -163,7 +142,7 @@ const data = {
   heritageSites: {
     images: ['/images/MunarJAm.jpg'],
     description: 'Discover important heritage sites...',
-    path: '/heritage-sites',
+    path: '/heritage',
   },
   libraries: {
     images: ['/images/Library.jpg'],
@@ -173,20 +152,19 @@ const data = {
   culturalArts: {
     images: ['/images/CulturalArts.jpg'],
     description: 'Explore cultural arts centers...',
-    path: '/cultural-arts',
+    path: '/culturalarts',
   },
 };
+
 const CulturalAttractions = () => {
   const [selectedCategory, setSelectedCategory] = useState('museums');
-  const [orderedCategories, setOrderedCategories] = useState(['museums', 'heritageSites', 'libraries', 'culturalArts']);
+  const [orderedCategories] = useState(['museums', 'heritageSites', 'libraries', 'culturalArts']);
   const navigate = useNavigate();
 
-  // Handler for sidebar menu clicks
   const handleMenuClick = (category) => {
     setSelectedCategory(category);
   };
 
-  // Fetch the currently visible cards based on selected category
   const getVisibleCards = () => {
     const startIndex = orderedCategories.indexOf(selectedCategory);
     return orderedCategories.slice(startIndex, startIndex + 3);
@@ -197,10 +175,12 @@ const CulturalAttractions = () => {
       <Grid container spacing={2}>
         {/* Header */}
         <Grid item xs={12}>
-        <Typography    variant="h4"
-        align="center"
-        gutterBottom
-        sx={{ pb: '4rem', fontWeight:'bold',  color: "primary.main" }}>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            sx={{ pb: '4rem', fontWeight: 'bold', color: "primary.main" }}
+          >
             Cultural Attractions
           </Typography>
         </Grid>
@@ -213,8 +193,7 @@ const CulturalAttractions = () => {
               flexDirection: { xs: 'row', md: 'column' },
               alignItems: { xs: 'center', md: 'flex-start' },
               justifyContent: 'flex-start',
-              gap: '1.5rem',
-              color: '#474747',
+              gap: { xs: '1rem', md: '1.5rem' },
               position: 'relative',
               width: '100%',
               height: '100%',
@@ -229,7 +208,7 @@ const CulturalAttractions = () => {
                 top: '50%',
                 transform: 'translateY(-50%)',
                 width: '2px',
-                height: '70%',
+                height: '60%',
                 backgroundColor: 'rgba(0, 0, 0, 0.2)',
                 display: { xs: 'none', md: 'block' },
               }}
@@ -240,25 +219,25 @@ const CulturalAttractions = () => {
               {
                 category: 'museums',
                 label: 'Museums',
-                icon: <MuseumOutlined sx={{ width: '2em', height: '1.8em',color:'primary.main' }} />,
+                icon: <MuseumOutlined sx={{ width: { xs: '1.5em', md: '2em' }, height: '1.5em', color: 'primary.main' }} />,
               },
               {
                 category: 'heritageSites',
                 label: 'Heritage Sites',
-                icon: <LandscapeOutlined sx={{ width: '2em', height: '1.8em', color:'primary.main' }} />,
+                icon: <LandscapeOutlined sx={{ width: { xs: '1.5em', md: '2em' }, height: '1.5em', color: 'primary.main' }} />,
               },
               {
                 category: 'libraries',
                 label: 'Libraries',
-                icon: <LocalLibraryOutlined sx={{ width: '2em', height: '1.8em' ,color:'primary.main'}} />,
+                icon: <LocalLibraryOutlined sx={{ width: { xs: '1.5em', md: '2em' }, height: '1.5em', color: 'primary.main' }} />,
               },
               {
                 category: 'culturalArts',
                 label: 'Cultural Arts',
-                icon: <PaletteOutlined sx={{ width: '2em', height: '1.8em', color:'primary.main'}} />,
+                icon: <PaletteOutlined sx={{ width: { xs: '1.5em', md: '2em' }, height: '1.5em', color: 'primary.main' }} />,
               },
             ].map((item, index) => (
-              <Box key={index} sx={{ display: 'flex', alignItems: 'center', flexDirection: 'row', marginBottom: 2 }}>
+              <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
                 <Box
                   sx={{
                     padding: '0.5em',
@@ -282,13 +261,20 @@ const CulturalAttractions = () => {
 
         {/* Main Content - Cards Display */}
         <Grid item xs={12} md={9}>
-          <Box sx={{ display: 'flex', gap: 4, flexDirection: { xs: 'column', md: 'row' } }}>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: { xs: 2, md: 4 },
+              flexDirection: { xs: 'column', md: 'row' },
+              justifyContent: 'center',
+            }}
+          >
             {getVisibleCards().map((category) => (
               <Box
                 key={category}
                 sx={{
-                  width: '300px',
-                  height: '420px',
+                  width: { xs: '90%', sm: '300px', md: '300px' },
+                  height: { xs: '400px', md: '420px' },
                   borderRadius: '10px',
                   overflow: 'hidden',
                   transition: 'transform 0.5s ease, opacity 0.5s ease',
@@ -298,9 +284,9 @@ const CulturalAttractions = () => {
                   transform: selectedCategory === category ? 'scale(1.1)' : 'scale(0.9)',
                   zIndex: selectedCategory === category ? 1 : 0,
                   '&:hover': {
-                    transform: 'scale(1.05)', // Scale effect on hover
-                    opacity: 1, // Full opacity on hover
-                    backdropFilter: 'blur(2px)', // Optional: Add blur on hover
+                    transform: 'scale(1.05)',
+                    opacity: 1,
+                    backdropFilter: 'blur(2px)',
                   },
                 }}
               >
@@ -322,7 +308,7 @@ const CulturalAttractions = () => {
                     size="small"
                     color="primary"
                     variant="contained"
-                    sx={{ marginTop: 2 }}
+                    sx={{ marginTop: 2, width: '100%' }}
                     onClick={() => navigate(data[category].path)}
                   >
                     Explore
@@ -336,6 +322,9 @@ const CulturalAttractions = () => {
     </Container>
   );
 };
+
+
+
 
 
 
@@ -726,7 +715,7 @@ const LetsGetBookingSection = () => {
 
 
 
-
+// Latest news section design
 const newsItems = [
   {
     id: 1,
@@ -843,8 +832,6 @@ const LatestNews = () => {
     </Container>
   );
 };
-
-
 
 
 
@@ -1041,10 +1028,7 @@ const HomePage = () => {
       <AfghanistanTourismSection />
       <TravelInfoSection />
       <CulturalAttractions />
-
       <Map />
-
-
       <FoodPage/>
       <LetsGetBookingSection/>
       <LatestNews/>

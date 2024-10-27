@@ -436,7 +436,7 @@ const Map = () => {
         <Typography variant="body1" color="textSecondary">
           Afghanistan
         </Typography>
-        <Typography variant="h3" color="#005a69" sx={{ mt: 1 }}>
+        <Typography variant="h4" color="primary.main" sx={{ fontWeight:'bold', mt: 1 }}>
           Discover Afghanistan
         </Typography>
       </Box>

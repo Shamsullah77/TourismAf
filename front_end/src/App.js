@@ -15,6 +15,10 @@ import Accommodation from "./pages/Accomodation.jsx";
 import Buses from "./pages/Buses.jsx";
 import Airlin from "./pages/Airlin.jsx"
 import Museum from "./pages/Museum.jsx";
+import Library from "./pages/Library.jsx";
+import AfghanHandicrafts from "./pages/AfghanHandicrafts.jsx";
+import HeritageSite from "./pages/HeritageSite.jsx";
+import CultureArt from "./pages/CultureArts.jsx";
 // import GoogleTranslateExample from "./componenets/GoogleTransulation/Transulation.jsx";
 
 
@@ -38,7 +42,10 @@ function App() {
           <Route path="/buses" element={<Buses />} />
           <Route path="/airlin" element={<Airlin/>}/>
           <Route path="/museum" element={<Museum/>}/>
-
+          <Route path="/libraries" element={<Library/>} />
+          <Route path="/handicrafts" element={<AfghanHandicrafts/>}/>
+          <Route path="/heritage" element={<HeritageSite/>}/>
+          <Route path="/culturalarts" element={<CultureArt/>}/>
           {/* <Route path="/buses" element={<Booking />} /> */}
 
         </Routes>

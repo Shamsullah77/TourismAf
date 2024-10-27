@@ -71,8 +71,12 @@ const Header = () => {
                 placeholder="Search…"
                 variant="outlined"
                 size="small"
-                
-                sx={{ width: { xs: '12rem', sm: '15rem', md: '14rem' } }} // Responsive width
+                sx={{ 
+                  width: { xs: '12rem', sm: '15rem', md: '14rem' }, 
+                  '& .MuiOutlinedInput-root': {
+                    height: '1.8rem' // Adjust the height
+                  }
+                }} // Responsive width
               />
             )}
             <IconButton

@@ -96,7 +96,7 @@ const HeroSection = () => (
     <Container
       sx={{
         textAlign: "center",
-        backgroundColor: "rgba(0, 0, 0, 0.6)",
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
         padding: { xs: "20px", md: "40px" },
         borderRadius: "12px",
       }}

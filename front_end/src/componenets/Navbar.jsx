@@ -337,14 +337,12 @@ import Booking from "../pages/Booking";
 
 const subMenus = {
   About: [
-    { title: "History of the Ministry", url: "#" },
-    { title: "History of the Tourism Directorate", url: "#" },
+    { title: "Deputy Ministry of Tourism", url: "#" },
+    // { title: "History of the Tourism ", url: "#" },
     { title: "Vision", url: "#" },
     { title: "Core Objectives", url: "#" },
     { title: "Our Values", url: "#" },
-    { title: "Organizational Structure", url: "#" },
-    {
-      title: "Legislative Documents",
+    { title: "Legislative Documents",
       submenu: [
         { title: "Tourism Laws", url: "#" },
         { title: "Cultural Heritage Laws", url: "#" },
@@ -355,6 +353,7 @@ const subMenus = {
     },
   ],
   "Tourism in Afghanistan": [
+
     { title: "General Information", url: "#" },
     { title: "Map of Afghanistan", url: "#" },
     {
@@ -429,7 +428,7 @@ const subMenus = {
     { title: "Accommodations", url: "/accommodation" },
     { title: "Buses", url: "/buses" },
     { title: "Airline", url: "/airlin" },
-    { title: "Train", url: "#" },
+    { title: "Taxi", url: "#" },
   ],
   Contact: [
     { title: "Contact Us", url: "#" },
@@ -440,6 +439,7 @@ const subMenus = {
 const pages = [
   { name: <HomeIcon />, link: "/" },
   { name: "About", link: "/about" },
+  {name: "Tourism in Afghanistan", link: "/"},
   { name: "Afghan Handicrafts", link: "/handicrafts" },
   { name: "Tourism Newsroom", link: "/newsroom" },
   { name: "Where To Go", link: "/whereToGo" },
@@ -528,7 +528,7 @@ function ResponsiveAppBar() {
                         backgroundColor: "#fff",
                         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
                         zIndex: 10,
-                        minWidth: "200px",
+                        minWidth: "15rem",
                         padding: "0.5rem",
                         textTransform:'capitalize',
                         borderRadius:'4px'

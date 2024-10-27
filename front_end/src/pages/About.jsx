@@ -1,10 +1,8 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Typography, Box, Container, Grid } from "@mui/material";
 import backgroundImage from '../asset/img/About.jpg';
 import profileImage from '../asset/img/Khairkhah.webp'; // Assuming the image you uploaded is saved in this path.
 import { useTheme } from "@emotion/react";
-
 
 // Full-screen HeroSection Component with advanced background styling
 const HeroSection = () => {
@@ -13,7 +11,6 @@ const HeroSection = () => {
     <Box
       sx={{
         backgroundImage: `url(${backgroundImage})`,
-        // backgroundImage:'url(/images/Accomodation.jpg)',
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100%", // Full screen width
@@ -30,7 +27,6 @@ const HeroSection = () => {
       }}
     >
       <Container
-        // maxWidth="lg"
         sx={{
           textAlign: "left",
           backgroundColor: "rgba(0, 0, 0, 0.2)",
@@ -61,62 +57,61 @@ const HeroSection = () => {
             },
           }}
         >
-  We value communication and transparency.        </Typography>
-      
+          We value communication and transparency.
+        </Typography>
       </Container>
     </Box>
   );
 };
-const About = () => {
 
-useEffect(()=>{
-  window.scrollTo(0,0)
-},[])
-  
+const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
+      <HeroSection/>
 
-<HeroSection/>
- 
-    {/* Statement Section */}
-    <Container maxWidth="xl" sx={{ padding: "3rem 0" }}>
-      <Grid container spacing={10} >
-        {/* Image Section (Now on the Left) */}
-        <Grid item xs={12} md={4}>
-          <Box
-            component="img"
-            src={profileImage} // Replace with actual image source
-            alt="Mullah Khairullah Khairkhwa"
-            sx={{
-              width: "100%",
-              borderRadius: "8px",
-              boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-            }}
-          />
+      {/* Statement Section */}
+      <Container maxWidth="xl" sx={{ padding: "3rem 0" }}>
+        <Grid container spacing={10}>
+          {/* Image Section (Now on the Left) */}
+          <Grid item xs={12} md={4}>
+            <Box
+              component="img"
+              src={profileImage} // Replace with actual image source
+              alt="Mullah Khairullah Khairkhwa"
+              sx={{
+                width: "100%",
+                borderRadius: "8px",
+                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+              }}
+            />
+          </Grid>
+
+          {/* Text Section (Now on the Right) */}
+          <Grid item xs={12} md={8}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
+              Statement Tourism Directorate
+            </Typography>
+            <Typography variant="body1" sx={{ paddingTop:'3rem' }}>
+              In the name of God, the most gracious, the most merciful
+            </Typography>
+            <Typography variant="body1" sx={{ marginTop: "1rem", lineHeight:'2rem'}}>
+              "Dear countrymen! The leadership of the Ministry of Information and Culture is committed to cultural development, quality publications, the development and progress of the tourism industry, and the balanced promotion of youth. The recent reforms in this ministry show our strong will to achieve these goals."
+            </Typography>
+            <Typography variant="body1" sx={{ pt: "2rem", fontWeight: 'bold' }}>
+              Mullah Qudratullah Jamal <br />
+              Acting Corporation of Culture & Information <br />
+              September 9, 2021 - During His Introduction Ceremony
+            </Typography>
+          </Grid>
         </Grid>
 
-        {/* Text Section (Now on the Right) */}
-        <Grid item xs={12} md={8} >
-          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
-            Statement Tourism Directorate
-          </Typography>
-          <Typography variant="body1" sx={{ paddingTop:'3rem' }}>
-            In the name of God, the most gracious, the most merciful
-          </Typography>
-          <Typography variant="body1" sx={{ marginTop: "1rem", lineHeight:'2rem'}}>
-            "Dear countrymen! The leadership of the Ministry of Information and Culture is committed to cultural development, quality publications, the development and progress of the tourism industry, and the balanced promotion of youth. The recent reforms in this ministry show our strong will to achieve these goals."
-          </Typography>
-          <Typography variant="body1" sx={{ pt: "2rem", fontWeight: 'bold' }}>
-            Mullah Qudratullah Jamal <br />
-            Acting Corporation of Culture & Information <br />
-            September 9, 2021 - During His Introduction Ceremony
-          </Typography>
-        </Grid>
-      </Grid>
-    </Container>
-  </>
+      </Container>
+    </>
   );
 };
 
 export default About;
-
