@@ -8,15 +8,15 @@ import {
   Card,
   CardMedia,
 } from "@mui/material";
-import image1 from "../asset/img/Acco1.jpg";
+import image1 from "../asset/img/مجسمه کنیشکا.jpg";
 import image2 from "../asset/img/Acco2.jpg";
 import image3 from "../asset/img/Acco3.jpg";
 import image4 from "../asset/img/Acco5.jpg";
 
-import image6 from "../asset/img/Acco6.jpg";
-import image7 from "../asset/img/Acco7.jpeg";
-import image8 from "../asset/img/Acco8.jpeg";
-import image9 from "../asset/img/Acco9.jpeg";
+import image6 from "../asset/img/کتبه رباتک.jpg";
+import image7 from "../asset/img/سنگ قبر.jpg";
+import image8 from "../asset/img/04.1.png";
+import image9 from "../asset/img/1.jpg";
 import backgroundImage from "../asset/img/Museum.jpg";
 
 // Data for museums
@@ -25,7 +25,7 @@ const museumData = [
     name: "National Museum",
     image: image1,
     description:
-      "A rich collection of Afghan history and culture. Visitors can explore artifacts from ancient to modern history.",
+      "National Museum of Afghanistan is located opposite to Dar-ul-Aman palace in southwest of Kabul. The current building of national museum was inaugurated in 1919 for the first time.",
   },
   {
     name: "Bamiyan Museum",
@@ -255,19 +255,42 @@ const KabulMuseum = () => {
                 color: "#333",
                 fontSize: { xs: "1.5rem" },
                 mb: 2,
-              }}
+            
+                  position: 'relative',
+           
+                  '&::after': {
+                    content: '""',
+                    display: 'block',
+                    width: '40%',
+                    height: '1px',
+                    backgroundColor: '#009fbb',
+                    margin: '0.5rem 0', // center the line below the text
+                  },
+                }}
+
+         
             >
-              Kabul Museum
+              National Museum
             </Typography>
             <Typography
               variant="body1"
-              sx={{ lineHeight: 1.6, textAlign: "justify", mb: 2 }}
+              sx={{ lineHeight: 1.6, textAlign: "justify", mb: 2 ,
+                position: 'relative',
+                
+                '&::after': {
+                  content: '""',
+                  display: 'block',
+                  width: '100%',
+                  height: '2px',
+                  backgroundColor: "",
+                  margin: '0.5rem auto 0', // center the line below the text
+                },
+               }}
             >
-              The Kabul Museum, also known as the National Museum of
-              Afghanistan, houses a vast collection of artifacts that represent
-              the rich cultural heritage of Afghanistan. Established in the
-              1920s, it showcases items from various historical periods,
-              including the ancient Silk Road.
+             National Museum of Afghanistan is located opposite to Dar-ul-Aman palace in southwest of Kabul. The current building of national museum was inaugurated in 1919 for the first time.
+
+Thousands of relics antiquities are registered with national museum. Previously, Alghanistan's National Museum had more than one hundred thousand antiquities, but unfortunately more than 70 percent of them were robbed during the civil war.
+
             </Typography>
             <Typography
               variant="body1"
@@ -278,9 +301,7 @@ const KabulMuseum = () => {
                 textAlign: "justify",
               }}
             >
-              <strong>Exhibits:</strong> The museum features a range of
-              exhibits, including ancient relics, Islamic art, and ethnographic
-              items that reflect the diverse cultures of Afghanistan.
+              <strong>Exhibits:</strong> The two story building of national museum was inaugurated back in 2004 in Kabul Antiquities and archaeological remains in national museum are divided into several groups and categories such as Ethnographic Exhibition, Islamic Period Exhibition, Mis Aynak Exhibition, Buddhik Aritiquates Exhibition, and Bakhtar Treasury Exhibition. Additionally, a great number of Antiquities have been exhibited in several provincial museums and there is a branch of Afghanistan's national museum in presidential palace as well, where a number of high valued Antiquities are stored.
             </Typography>
             <Typography
               variant="body1"
@@ -291,10 +312,7 @@ const KabulMuseum = () => {
                 textAlign: "justify",
               }}
             >
-              <strong>Visiting Information:</strong> The museum is open to
-              visitors and provides guided tours to help understand the
-              significance of its collections. It is recommended to check the
-              museum's schedule for special exhibitions and events.
+              <strong>Visiting Information:</strong> The best of national museum's antiquities are that of Tila Tapa's (Gold Hill) which have been exhibited in several countries of the world.
             </Typography>
             <Typography
               variant="body1"

@@ -305,11 +305,6 @@
 
 
 
-
-
-
-
-
 import * as React from "react";
 import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
@@ -359,13 +354,13 @@ const subMenus = {
     {
       title: "List of Cultural Heritage",
       submenu: [
-        { title: "Tangible", url: "#" },
+        { title: "Tangible", url: "/heritage" },
         { title: "Intangible", url: "#" },
       ],
     },
-    { title: "List of Natural Attractions", url: "#" },
-    { title: "List of Religious Attractions", url: "#" },
-    { title: "List of Sports Attractions", url: "#" },
+    { title: "List of Natural Attractions", url: "/natural" },
+    { title: "List of Religious Attractions", url: "/religious" },
+    { title: "List of Sports Attractions", url: "/sport" },
     { title: "Tourism Events", url: "#" },
     { title: "Travel Guide", url: "#" },
   ],

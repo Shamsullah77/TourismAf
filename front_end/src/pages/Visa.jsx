@@ -1,20 +1,10 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  FormControl,
-  Grid,
-  InputLabel,
-  MenuItem,
-  Select,
-  Typography,
-  Dialog,
+import {Box,Button,Container,FormControl,Grid,InputLabel,MenuItem,Select,Typography,Dialog,
   DialogTitle,
   DialogContent,
 } from "@mui/material";
-import backgroundImage from "../asset/img/visa.jpeg";
-import visa from "../asset/img/visa2.jpeg";
+import backgroundImage from "../asset/img/Museum.jpg";
+import visa from "../asset/img/flight.jpeg";
 
 const HeroSection = () => (
   <Box

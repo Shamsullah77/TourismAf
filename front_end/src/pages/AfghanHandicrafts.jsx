@@ -86,17 +86,22 @@ const CraftedWithLoveSection = () => {
       >
         {/* Text Section */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 'bold', paddingBottom: '2rem' }}>
+          <Typography variant="h4" gutterBottom sx={{ color: 'primary.main', fontWeight: 'bold', paddingBottom: '2rem',
+            position: 'relative',
+
+            '&::after': {
+              content: '""',
+              display: 'block',
+              width: '50%',
+              height: '1px',
+              backgroundColor: '#009fbb',
+              margin: '0.5rem  0', // center the line below the text
+            },
+           }}>
             Crafted with Love
           </Typography>
           <Typography variant="body1" paragraph>
-            Dive into the vibrant world of Afghan handicrafts, where every piece tells a story of tradition, culture, and artistry. These aren’t just products; they are treasures that carry the spirit of Afghanistan, crafted by skilled artisans who pour their heart and soul into every stitch and weave.
-          </Typography>
-          <Typography variant="body1" paragraph>
-            From intricately designed carpets that could make even the most mundane room feel like a palace, to stunning pottery that would make your grandma weep with joy, Afghan handicrafts are a feast for the eyes and a balm for the soul. Each item is a testament to the rich heritage and craftsmanship that has been passed down through generations.
-          </Typography>
-          <Typography variant="body1">
-            So, whether you’re looking to adorn your home with unique decor or searching for the perfect gift that screams ‘I care,’ our collection of Afghan handicrafts is here to save the day. Get ready to be dazzled!
+          Afghanistan has worldwide reputation for its carpet/rug industry. Carpets in Afghanistan are often woven by women. The long process of carpet weaving from beginning up to ready for use stage are accomplished in Afghanistan. The process starts with shearing the sheep and changing wooed into string. The string (threads) are dyed and then woven in hundreds of styles and colours as per given design or drawing and tradition. The final stage comes with cleaning, stretching, and clipping through machines. Afghan carpets have hundreds of styles and colours which are woven according to demand and mode of the day. More than a million people are engaged with carpet industry majority of which goes to northern parts of the country where the art has been developed better than the other parts Afghan traders export rugs, worth hundreds of millions Dollars, to international markets. Afghan rugs have got international popularity for their fabric and color in international industrial exhibitions
           </Typography>
         </Grid>
 
@@ -131,13 +136,13 @@ const CurrentDevelopmentSection = () => {
       title: 'New Collection Launch: Afghan Wonders',
       date: 'October 15, 2024',
       description: 'Explore our latest collection featuring stunning handicrafts that will leave you breathless. Don’t miss out!',
-      img: 'images/HandCrapDevelopment.jpeg', // Replace with your actual image URL
+      img: 'images/BdHandcraft1.jpg', // Replace with your actual image URL
     },
     {
       title: 'Artisan Spotlight: Meet the Makers',
       date: 'October 10, 2024',
       description: 'Get to know the talented artisans behind our beautiful handicrafts. Their stories are as captivating as their creations!',
-      img: 'images/HandCrapDevelopment1.jpeg', // Replace with your actual image URL
+      img: 'images/BdHandcraft2.jpg', // Replace with your actual image URL
     },
     {
       title: 'Customer Favorites: Top Picks Revealed',

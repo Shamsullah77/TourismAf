@@ -19,10 +19,12 @@ import Library from "./pages/Library.jsx";
 import AfghanHandicrafts from "./pages/AfghanHandicrafts.jsx";
 import HeritageSite from "./pages/HeritageSite.jsx";
 import CultureArt from "./pages/CultureArts.jsx";
+import NaturalAttraction from "./pages/Natural.jsx";
+import ReligousAttraction from "./pages/ListOfReliagious.jsx";
+import Sports from "./pages/Sprot.jsx";
+import AboutAfghanistan from "./pages/AboutAfghanistan.jsx";
+import Visa from "./pages/Visa.jsx";
 // import GoogleTranslateExample from "./componenets/GoogleTransulation/Transulation.jsx";
-
-
-
 
 function App() {
   return (
@@ -46,6 +48,13 @@ function App() {
           <Route path="/handicrafts" element={<AfghanHandicrafts/>}/>
           <Route path="/heritage" element={<HeritageSite/>}/>
           <Route path="/culturalarts" element={<CultureArt/>}/>
+          <Route path="/natural" element={<NaturalAttraction/>}/>
+          <Route path="/religious" element={<ReligousAttraction/>}/>
+          <Route path="/sport" element={<Sports/>}/>
+          <Route path="/aboutafg" element={<AboutAfghanistan/>}/>
+          <Route path="/visa" element={<Visa/>}/>
+
+
           {/* <Route path="/buses" element={<Booking />} /> */}
 
         </Routes>

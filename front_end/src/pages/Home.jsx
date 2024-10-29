@@ -17,17 +17,14 @@ import CommentIcon from '@mui/icons-material/Comment';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 
 
-
-
-
 // information of Afg shuar
 const AfghanistanTourismSection = () => {
   return (
     <Box
       sx={{
         // backgroundImage: `url(${afghanistanBackground})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        // backgroundSize: "cover",
+        // backgroundPosition: "center",
         color: "primary.main",
         padding: { xs: "30px 20px", md: "40px 40px" },
         textAlign: "center",
@@ -67,62 +64,93 @@ const AfghanistanTourismSection = () => {
 
 
 
+// Travel information section Reusable Card Component
+const TravelInfoCard = ({ image, title, description, link }) => {
+  const navigate = useNavigate();
 
-//Travel information section  Reusable Card Component
-const TravelInfoCard = ({ image, title, description }) => (
-  <Grid item xs={12} sm={6} md={3}>
-    <Card
-      sx={{
-        boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.3)',
-        borderRadius: '20px',
-        transition: 'transform 0.3s ease-in-out',
-        padding:'1rem 0',
-        '&:hover': { transform: 'translateY(-10px)', boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)' },
-        height: '100%',
-      }}
-    >
-      <CardContent sx={{  textAlign: 'center' }}>
-        <img src={image} alt={title} width="100" height="100" style={{ marginBottom: '1rem' }} />
-        <Typography variant="h6" color="primary" gutterBottom>
-          {title}
-        </Typography>
-        <Typography variant="body2" color="primary">
-          {description}
-        </Typography>
-      </CardContent>
-      <Stack alignItems="center">
-        <CardActions>
-          <Button variant="outlined" sx={{ color: 'primary.light', borderColor: '#009fbb', '&:hover': { backgroundColor: '#009fbb', color: 'white' } }}>
-            Read More
-          </Button>
-        </CardActions>
-      </Stack>
-    </Card>
-  </Grid>
-);
+  const handleButtonClick = () => {
+    navigate(link);
+  };
+
+  return (
+    <Grid item xs={12} sm={6} md={3}>
+      <Card
+        sx={{
+          boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.3)',
+          borderRadius: '20px',
+          transition: 'transform 0.3s ease-in-out',
+          padding: '1rem 0',
+          '&:hover': { transform: 'translateY(-10px)', boxShadow: '0px 10px 25px rgba(0, 0, 0, 0.3)' },
+          height: '100%',
+        }}
+      >
+        <CardContent sx={{ textAlign: 'center' }}>
+          <img src={image} alt={title} width="100" height="100" style={{ marginBottom: '1rem' }} />
+          <Typography variant="h6" color="primary" gutterBottom>
+            {title}
+          </Typography>
+          <Typography variant="body2" color="primary">
+            {description}
+          </Typography>
+        </CardContent>
+        <Stack alignItems="center">
+          <CardActions>
+            <Button
+              variant="outlined"
+              onClick={handleButtonClick}
+              sx={{ color: 'primary.light', borderColor: '#009fbb', '&:hover': { backgroundColor: '#009fbb', color: 'white' } }}
+            >
+              Read More
+            </Button>
+          </CardActions>
+        </Stack>
+      </Card>
+    </Grid>
+  );
+};
 
 // Travel Information Section Component
 const TravelInfoSection = () => {
   const cardData = [
-    { image: '/images/bairaqLogo.png', title: 'About Afghanistan', description: 'Want to travel visa-free? Check if you qualify.' },
-    { image: '/images/Visa Info.png', title: 'Visa Regulations', description: 'Learn about visa rules and requirements learn.' },
-    { image: '/images/Travel Guide.png', title: 'Travel Guide', description: 'Explore essential travel guides for your trip.' },
-    { image: '/images/bairaqLogo.png', title: 'Getting Around', description: 'Find tips for getting around Afghanistan .' },
+    { image: '/images/bairaqLogo.png',
+       title: 'About Afghanistan',
+        description: 'Want to travel visa-free? Check if you qualify.',
+         link: '/aboutafg' 
+    },
+
+    { image: '/images/Visa Info.png',
+      title: 'Visa Regulations',
+       description: 'Learn about visa rules and requirements.',
+        link: '/visa'
+       },
+
+    { image: '/images/Travel Guide.png',
+      title: 'Travel Guide',
+       description: 'Explore essential travel guides for your trip.',
+        link: '/travel-guide' 
+    },
+    { image: '/images/bairaqLogo.png',
+      title: 'Getting Around',
+      description: 'Find tips for getting around Afghanistan.',
+      link: '/getting-around' 
+    },
   ];
 
   return (
     <section aria-label="Travel Information Section">
       <Container maxWidth="xl" sx={{ paddingTop: '5rem' }}>
         <Box>
-        <Typography    variant="h4"
-        align="center"
-        gutterBottom
-        sx={{ pb: '4rem', fontWeight:'bold',  color: "primary.main" }}>
+          <Typography
+            variant="h4"
+            align="center"
+            gutterBottom
+            sx={{ pb: '4rem', fontWeight: 'bold', color: 'primary.main' }}
+          >
             THINGS TO KNOW BEFORE TRAVELLING
           </Typography>
           <Grid container spacing={5} justifyContent="center">
             {cardData.map((card, index) => (
-              <TravelInfoCard key={index} image={card.image} title={card.title} description={card.description} />
+              <TravelInfoCard key={index} image={card.image} title={card.title} description={card.description} link={card.link} />
             ))}
           </Grid>
         </Box>
