@@ -9,8 +9,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+
 
 // Create your theme
 const theme = createTheme({
