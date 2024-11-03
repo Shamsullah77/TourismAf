@@ -43,4 +43,4 @@ node_modules
 node_modules/*
 
 front_end/src/asset/video
-front_end/src/asset/img
+# front_end/src/asset/img
